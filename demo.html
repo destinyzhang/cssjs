@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="zh-cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="wait.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        button {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="javascript:btnclick(this)"></button>
+</body>
+<script>
+    // let WaitingPal = new Waiting({ width: '10px', height: '10px', speed: 1, count: 25, style: 'cicle', space: 1000, elecolor: 'rgba(0, 200, 0, 0.2)', eleanicolor: 'rgba(0, 255, 0, 1)', backgroundcolor: 'rgba(0, 0, 255, 0.3)' })
+    let WaitingPal = new Waiting({ speed: 1.5, count: 10, style: 'line', height: '20px', radius: '20%' })
+    // let WaitingPal = new Waiting()
+    function btnclick(value) {
+        WaitingPal.show()
+        setTimeout(function () {
+            WaitingPal.hide()
+        }, 5000);
+    }
+</script>
+
+</html>
