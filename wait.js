@@ -38,12 +38,13 @@ let Waiting = (function () {
         basecss += '@keyframes ' + ani_name_ele + '{';
         let per = 100 / this.cfg.count;
         let off = this['style' + this.cfg.style](this.cfg)
+        let cinfo, ninfo;
         for (let i = 1; i <= this.cfg.count; ++i) {
             let ele = document.createElement('div');
             ele.className = css_name_ele;
             this.overlayer.appendChild(ele);
-            let cinfo = off(i);
-            let ninfo = off(i == this.cfg.count ? 1 : i + 1);
+            cinfo = ninfo || off(i);
+            ninfo = off(i == this.cfg.count ? 1 : i + 1);
             let ctrans = 'translate(' + cinfo.x + '%, ' + cinfo.y + '%)';
             let ntrans = 'translate(' + ninfo.x + '%, ' + ninfo.y + '%)';
             ele.style.transform = ctrans;
